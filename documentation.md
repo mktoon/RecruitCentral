@@ -155,6 +155,6 @@ Here are some potential categories:
     - Help center with FAQs and user guides
     - Customer support channels for technical issues or inquiries
     - Online chat or support ticket system for personalized assistance
-
+# NOTE
 These categories provide a framework to organize and structure the different components of our platform. However, the specific categories may vary based on our unique 
 project requirements and the features you decide to implement.

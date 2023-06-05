@@ -30,7 +30,6 @@ def register_student():
             password VARCHAR(255),
             sport VARCHAR(255),
             times VARCHAR(255),
-            eligibility_status VARCHAR(255),
             bio TEXT
         )
     """)
@@ -41,7 +40,7 @@ def register_student():
     password = input("Enter a password: ")
     sport = input("Enter the sport: ")
     times = input("Enter the times: ")
-    eligibility_status = input("Enter the eligibility status: ")
+    #eligibility_status = input("Enter the eligibility status: ")
     bio = input("Enter the bio: ")
 
     try:
@@ -49,7 +48,7 @@ def register_student():
         cursor.execute("""
             INSERT INTO students (username, password, sport, times, eligibility_status, bio)
             VALUES (%s, %s, %s, %s, %s, %s)
-        """, (username, password, sport, times, eligibility_status, bio))
+        """, (username, password, sport, times,  bio))
         conn.commit()
         print("Registration successful!")
     except mysql.connector.IntegrityError:
