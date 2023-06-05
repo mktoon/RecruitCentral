@@ -1,17 +1,5 @@
 import mysql.connector
 
-# Prompt the user for their role (athlete or coach)
-user_role = input("Are you a student athlete or a coach? ")
-
-if user_role.lower() == "athlete":
-    # Code for student athlete functionality
-    register_student()
-elif user_role.lower() == "coach":
-    # Code for coach functionality
-    coach_login()
-else:
-    print("Invalid input. Please select either 'athlete' or 'coach'.")
-
 def register_student():
     # Establish a connection to the MySQL database
     conn = mysql.connector.connect(
@@ -30,6 +18,7 @@ def register_student():
             password VARCHAR(255),
             sport VARCHAR(255),
             times VARCHAR(255),
+            eligibility_status VARCHAR(255),
             bio TEXT
         )
     """)
@@ -40,7 +29,7 @@ def register_student():
     password = input("Enter a password: ")
     sport = input("Enter the sport: ")
     times = input("Enter the times: ")
-    #eligibility_status = input("Enter the eligibility status: ")
+    eligibility_status = input("Enter the eligibility status: ")
     bio = input("Enter the bio: ")
 
     try:
@@ -48,7 +37,7 @@ def register_student():
         cursor.execute("""
             INSERT INTO students (username, password, sport, times, eligibility_status, bio)
             VALUES (%s, %s, %s, %s, %s, %s)
-        """, (username, password, sport, times,  bio))
+        """, (username, password, sport, times, eligibility_status, bio))
         conn.commit()
         print("Registration successful!")
     except mysql.connector.IntegrityError:
@@ -58,7 +47,7 @@ def register_student():
     conn.close()
 
 def coach_login():
-    print("Coach Login")
+    print("Welcome to Coach Login")
     username = input("Enter your username: ")
     password = input("Enter your password: ")
 
@@ -127,3 +116,15 @@ def create_coach_account():
 
     # Close the database connection
     conn.close()
+
+# Prompt the user for their role (athlete or coach)
+user_role = input("Are you a student athlete or a coach? ")
+
+if user_role.lower() == "athlete":
+    # Code for student athlete functionality
+    register_student()
+elif user_role.lower() == "coach":
+    # Code for coach functionality
+    coach_login()
+else:
+    print("Invalid input. Please select either 'athlete' or 'coach'.")
