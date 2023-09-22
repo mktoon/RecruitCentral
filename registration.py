@@ -1,16 +1,16 @@
 import mysql.connector
 
 def register_student():
-    # Establish a connection to the MySQL database
+    # Establishing a connection to the MySQL database
     conn = mysql.connector.connect(
-        host="localhost",
-        user="your_username",
-        password="your_password",
-        database="your_database"
+    host="localhost",
+    user="your_username",
+    password="your_password",
+    database="your_database"
     )
     cursor = conn.cursor()
 
-    # Create the students table if it doesn't exist
+    # Create a student database
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS students (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -42,8 +42,6 @@ def register_student():
         print("Registration successful!")
     except mysql.connector.IntegrityError:
         print("Username already exists. Please choose a different username.")
-
-    # Close the database connection
     conn.close()
 
 def coach_login():
@@ -120,9 +118,11 @@ def create_coach_account():
 # Prompt the user for their role (athlete or coach)
 user_role = input("Are you a student athlete or a coach? ")
 
+# conditional statement to determine if coach or student
 if user_role.lower() == "athlete":
     # Code for student athlete functionality
     register_student()
+
 elif user_role.lower() == "coach":
     # Code for coach functionality
     coach_login()
