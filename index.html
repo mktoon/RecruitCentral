@@ -76,7 +76,7 @@
         }
 
         /* Style for the authentication section */
-        ##auth-section {
+        #auth-section {
           text-align: center;
           padding: 20px;
       }
@@ -173,22 +173,8 @@
                 <li>Global connections for athletes and coaches</li>
             </ul>
         </section>
-
         <section id="auth-section">
           <div class="auth-container">
-              <div class="auth-form">
-                  <h2>Login</h2>
-                  <form action="/login" method="post">
-                      <label for="login-username">Username:</label>
-                      <input type="text" id="login-username" name="username" required>
-                      <br>
-                      <label for="login-password">Password:</label>
-                      <input type="password" id="login-password" name="password" required>
-                      <br>
-                      <button type="submit">Login</button>
-                  </form>
-              </div>
-      
               <div class="auth-form">
                   <h2>Register</h2>
                   <form action="/register" method="post">
@@ -198,9 +184,23 @@
                       <label for="register-password">Password:</label>
                       <input type="password" id="register-password" name="password" required>
                       <br>
-                      <label for="register-sport">Sport:</label>
-                      <input type="text" id="register-sport" name="sport" required>
+                      <label for="register-role">Role:</label>
+                      <select id="register-role" name="role" required>
+                          <option value="student">Student</option>
+                          <option value="coach">Coach</option>
+                      </select>
                       <br>
+      
+                      <!-- Allow users to select multiple sports -->
+                      <label for="register-sports">Select Sports:</label>
+                      <select id="register-sports" name="sports[]" multiple required>
+                          <option value="football">Football</option>
+                          <option value="basketball">Basketball</option>
+                          <option value="volleyball">Volleyball</option>
+                          <!-- Add more sports as needed -->
+                      </select>
+                      <br>
+      
                       <label for="register-times">Times:</label>
                       <input type="text" id="register-times" name="times" required>
                       <br>

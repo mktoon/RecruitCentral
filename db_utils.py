@@ -8,3 +8,7 @@ def establish_database_connection():
         password="Sesat@26535102020",
         database="recruitcentral"
     )
+    return connection
+except mysql.connector.Error as e:
+    print(f"Error connecting to MySQL Database: {e}")
+    raise

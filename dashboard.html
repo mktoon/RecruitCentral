@@ -59,10 +59,19 @@
 <body>
     <div class="dashboard-container">
         <h1>Welcome, {{ username }}!</h1>
-        <p>Your Dashboard Content Goes Here.</p>
+        <p>Sport: {{ sport }}</p>
+        <p>Times: {{ times }}</p>
+        <p>Eligibility Status: {{ eligibility_status }}</p>
+        <p>Bio: {{ bio }}</p>
+        <p>Recruitment Status: In Progress</p>
+        <p>Number of Coaches Interested: {{ num_coaches_interested }}</p>
+        <p>Scholarship Offers: {{ scholarship_offers }}</p>
 
         <!-- Add additional dashboard content as needed -->
 
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+        <a href="{{ url_for('messages') }}">View Messages</a>
         <a href="{{ url_for('logout') }}">Logout</a>
     </div>
 </body>

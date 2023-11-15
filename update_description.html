@@ -1,11 +1,13 @@
+<!-- update_description.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecruitCentral - Login</title>
+    <title>Update Description</title>
     <style>
+        /* Add your styling here */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f2f2f2;
@@ -37,7 +39,7 @@
             color: #555;
         }
 
-        input {
+        textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
@@ -63,16 +65,14 @@
 </head>
 
 <body>
-    <form method="POST" action="{{ url_for('login') }}">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-    
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    
-        <button type="submit">Login</button>
+    <form method="POST" action="{{ url_for('update_description') }}">
+        <h1>Update Description</h1>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <button type="submit">Update</button>
     </form>
-    
 </body>
 
 </html>

@@ -1,0 +1,86 @@
+<!-- coach_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Dashboard</title>
+    <style>
+        /* Add your styling here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .student-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Coach Dashboard</h1>
+
+    <!-- Example Student Card (Repeat this for each registered student) -->
+    <div class="student-card">
+        <h2>{{ student.username }}</h2>
+        <p>Sport: {{ student.sport }}</p>
+        <p>Times: {{ student.times }}</p>
+        <p>Eligibility Status: {{ student.eligibility_status }}</p>
+        <p>Bio: {{ student.bio }}</p>
+
+        <!-- Add more student details as needed -->
+
+        <button onclick="provideFeedback('{{ student.username }}')">Provide Feedback</button>
+        <button onclick="offerScholarship('{{ student.username }}')">Offer Scholarship</button>
+    </div>
+
+    <!-- Repeat the student card for each registered student -->
+
+    <script>
+        function provideFeedback(username) {
+            // Implement logic to provide feedback
+            alert(`Provide feedback for ${username}`);
+        }
+
+        function offerScholarship(username) {
+            // Implement logic to offer a scholarship
+            alert(`Offer scholarship to ${username}`);
+        }
+    </script>
+</body>
+
+</html>

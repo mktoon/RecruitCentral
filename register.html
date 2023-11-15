@@ -62,30 +62,27 @@
     </style>
 </head>
 
-<body>
-    <form method="POST" action="{{ url_for('register') }}">
-        <h1>Register</h1>
+<form method="POST" action="{{ url_for('register') }}">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+    <label for="sport">Sport:</label>
+    <input type="text" id="sport" name="sport" required>
 
-        <label for="sport">Sport:</label>
-        <input type="text" id="sport" name="sport" required>
+    <label for="times">Times:</label>
+    <input type="text" id="times" name="times" required>
 
-        <label for="times">Times:</label>
-        <input type="text" id="times" name="times" required>
+    <label for="eligibility_status">Eligibility Status:</label>
+    <input type="text" id="eligibility_status" name="eligibility_status" required>
 
-        <label for="eligibility_status">Eligibility Status:</label>
-        <input type="text" id="eligibility_status" name="eligibility_status" required>
+    <label for="bio">Bio:</label>
+    <textarea id="bio" name="bio" required></textarea>
 
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" required></textarea>
-
-        <button type="submit">Register</button>
-    </form>
+    <button type="submit">Register</button>
+</form>
 </body>
 
 </html>
