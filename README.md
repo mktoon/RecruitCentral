@@ -12,5 +12,4 @@ We prioritize the security and confidentiality of our users' information, implem
 Join RecruitCentral today and embark on a transformative journey toward your athletic dreams. Empower yourself with the tools, connections, and guidance needed to navigate the recruitment process with confidence. Whether you're a student athlete seeking the perfect collegiate opportunity or a coach in search of exceptional talent, RecruitCentral is your gateway to success in the competitive world of sports recruitment."
 
 # BY:
-# Robert Rotich
 # Micah Too
